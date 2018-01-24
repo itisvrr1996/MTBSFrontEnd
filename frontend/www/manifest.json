@@ -1,0 +1,11 @@
+{
+  "name": "Movie Ticket Booking System",
+  "short_name": "BookMyTicket",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

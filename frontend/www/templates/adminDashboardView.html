@@ -1,0 +1,21 @@
+<ion-view view-title="{{ title }}" ng-controller="AdminDashboardCtrl">
+    <ion-content>
+        <ion-item>
+            <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-blur="validateEmail()" ng-model="loginData.username">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="loginData.password">
+            </label>
+            <button class="button button-full button-positive" ng-click="submit()">
+                    Submit
+                </button>
+                {{loginData}}
+                <hr>
+                {{token}}
+        </ion-item>
+        
+    </ion-content>
+</ion-view>
