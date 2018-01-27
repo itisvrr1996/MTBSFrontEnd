@@ -1,0 +1,99 @@
+<ion-view view-title="Choose Your Seats">
+    <ion-header-bar>
+        <h1 class="title">Register</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeLogin()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+
+
+        <div class="card">
+            <div class="item item-text-wrap" style="text-align:center;">
+                <span style="text-align: center"> Screen Here!</span>
+            </div>
+            <div class="item item-text-wrap">
+                <div class="row" ng-repeat="row in layout">
+                    <div class="col" ng-repeat="col in row">
+                        <div class="round-button" ng-click="select(col)">
+                            <div class="round-button-circle">
+                                <a id="{{col}}" class="round-button">{{col}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-text-wrap" style="text-align:center;">
+                <span style="text-align: center"> Exit Here!</span>
+            </div>
+            <div class="item item-divider">
+                You have selected
+                <span ng-if="seats.count > 0">{{seats.count}}</span>
+                <span ng-if="seats.selectedSeats.length == 0">None</span>
+                <span ng-if="seats.count == 1">Seat</span>
+                <span ng-if="seats.count > 1">Seats</span>
+                <span ng-if="seats.count < seats.limit">Please select {{seats.limit - seats.count}} more seats </span>
+                <span ng-if="seats.count == seats.limit ">You have reached the limit</span>
+            </div>
+            <div class="item item-divider">
+
+                <button class="button button-positive button-block" ng-disabled="seats.count < seats.limit"
+                 ng-click="proceedToPayment()">
+                    Book {{seats.count}}
+                    <span ng-if="seats.count == 1">Seat</span>
+                    <span ng-if="seats.count > 1">Seats</span> for &#8377; {{seats.totalCost}}
+                </button>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </ion-content>
+
+
+    <style>
+        .round-button {
+            width: 20px;
+            margin: 0px;
+        }
+
+        .round-button-circle {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            border-radius: 0px;
+            border: 1px solid #cfdcec;
+            overflow: hidden;
+
+            background: rgb(244, 246, 248);
+            box-shadow: 0 0 3px gray;
+        }
+
+        .round-button-circle:hover {
+            background: #30588e;
+        }
+
+        .round-button a {
+            display: block;
+            float: left;
+            width: 100%;
+            padding-top: 50%;
+            padding-bottom: 50%;
+            line-height: 1em;
+            margin-top: -0.5em;
+
+            text-align: center;
+            color: #02101f;
+            font-family: Verdana;
+            font-size: 0.7em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</ion-view>

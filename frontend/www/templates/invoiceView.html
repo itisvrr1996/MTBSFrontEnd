@@ -1,0 +1,24 @@
+<ion-view>
+        <ion-content>
+    
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Thanks for Booking
+                </div>
+    
+                <div class="item item-divider">
+                    Your seats have been confirmed
+                </div>
+    
+                <div class="item item-divider">
+                    Your seat numbers are <span ng-repeat="seat in seats" style="margin:4px">{{seat}}</span>
+                </div>
+    
+                <div class="item item-divider">
+                    The ticket invoice has been sent to <b>{{email.email}}</b>
+                </div>
+    
+            </div>
+    
+        </ion-content>
+    </ion-view>

@@ -1,0 +1,151 @@
+<ion-view view-title="selectedMovies 1">
+        <ion-nav-buttons side="left">
+                <button class="button button-clear" ng-click="GoBack()" >
+                <i class="icon ion-ios-arrow-back"></i>
+                Back</button>
+        </ion-nav-buttons>
+
+    <ion-content>
+        <div class="button-bar">
+            <button class="button button-positive" modal-select ng-model="genre" options="genres" on-select="selectGenre(oldValue,newValue)"
+                modal-title="Select Genre" has-search="true">
+                Select Genre
+                <div class="option">
+                    {{option}}
+                </div>
+            </button>
+            <button class="button button-positive" modal-select ng-model="language" options="languages" modal-title="Select Language"
+                on-select="selectLanguage(oldValue,newValue)" has-search="true">
+                Select Language
+                <div class="option">
+                    {{option}}
+                </div>
+            </button>
+
+
+            <button class="button button-positive" on-select="selectCity(oldValue,newValue)" modal-select ng-model="city" options="cities"
+                modal-title="Select Language" 
+                has-search="true"
+                multiple="multiple"
+                >
+                Select City
+                <div class="option">
+                    {{option}}
+                </div>
+            </button>
+
+
+
+        </div>
+        <hr>
+
+        <div class="row" ng-repeat="movie in selectedMovies" ng-if="$index % 4 === 0">
+            <div class="col col-25" ng-if="$index < selectedMovies.length">
+
+                <div class="list card">
+                    <div class="item item-image">
+                        <img ng-src="{{selectedMovies[$index].movieImage}}" width="80%" />
+                    </div>
+                    <a class="item item-icon-left assertive" href="#">
+                        <i class="icon ion-film-marker"></i>
+                        <h2>{{movie.movieName}}</h2>
+                        <h3>{{movie.genre}}</h3>
+                        <h4>{{movie.language}}</h4>
+                    </a>
+                    <button class="button button-positive button-full" ng-click="book(selectedMovies[$index])">
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="col col-25" ng-if="$index + 1 < selectedMovies.length">
+                <div class="list card">
+                    <div class="item item-image">
+                        <img ng-src="{{selectedMovies[$index+1].movieImage}}" width="80%" />
+                    </div>
+                    <a class="item item-icon-left assertive" href="#">
+                        <i class="icon ion-film-marker"></i>
+                        <h2>{{selectedMovies[$index+1].movieName}}</h2>
+                        <h3>{{selectedMovies[$index+1].genre}}</h3>
+                        <h4>{{selectedMovies[$index+1].language}}</h4>
+                    </a>
+                    <button class="button button-positive button-full" ng-click="book(selectedMovies[$index + 1])">
+                        Book Now
+                    </button>
+
+                </div>
+            </div>
+            <div class="col col-25" ng-if="$index + 2 < selectedMovies.length">
+                <div class="list card">
+                    <div class="item item-image">
+                        <img ng-src="{{selectedMovies[$index+2].movieImage}}" width="80%" />
+                    </div>
+                    <a class="item item-icon-left assertive" href="#">
+                        <i class="icon ion-film-marker"></i>
+                        <h2>{{selectedMovies[$index+2].movieName}}</h2>
+                        <h3>{{selectedMovies[$index+2].genre}}</h3>
+                        <h4>{{selectedMovies[$index+2].language}}</h4>
+                    </a>
+                    <button class="button button-positive button-full" ng-click="book(selectedMovies[$index+2])">
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="col col-25" ng-if="$index + 3 < selectedMovies.length">
+                <div class="list card">
+                    <div class="item item-image">
+                        <img ng-src="{{selectedMovies[$index+3].movieImage}}" width="80%" />
+                    </div>
+                    <a class="item item-icon-left assertive" href="#">
+                        <i class="icon ion-film-marker"></i>
+                        <h2>{{selectedMovies[$index+3].movieName}}</h2>
+                        <h3>{{selectedMovies[$index+3].genre}}</h3>
+                        <h4>{{selectedMovies[$index+3].language}}</h4>
+                    </a>
+                    <button class="button button-positive button-full" ng-click="book(selectedMovies[$index+3])">
+                        Book Now
+                    </button>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <style>
+            .col-50,
+            .col-33 {
+                display: flex;
+            }
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .item-avatar,
+            .item.tabs {
+                flex: 0 0 auto;
+            }
+
+            .item-body {
+                flex: 1 1 auto;
+            }
+        </style>
+
+
+
+    </ion-content>
+
+
+
+
+</ion-view>

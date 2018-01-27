@@ -10,15 +10,16 @@
             <div class="list">
                 <label class="item item-input">
                     <span class="input-label">Email</span>
-                    <input type="email" 
-                    name="email"
-                    ng-required="true" 
-                    ng-model="loginData.email">
+                    <input type="email" name="email" ng-required="true" ng-model="loginData.email">
                 </label>
-              
                 <label class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input type="text" ng-required = "true" name="username" ng-model="loginData.username">                </label>
+                    <span class="input-label">First Name</span>
+                    <input type="text" ng-required="true" name="firstName" ng-model="loginData.firstName"> 
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" ng-required="true" name="lastName" ng-model="loginData.lastName"> 
+                </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
                     <input type="password" name="password" ng-model="loginData.password">
@@ -33,6 +34,6 @@
             </div>
         </form>
         {{loginData}}
-        
+
     </ion-content>
 </ion-modal-view>

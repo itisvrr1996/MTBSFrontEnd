@@ -1,6 +1,21 @@
+
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$localStorage,$state) {
+ 
+
+    $scope.isLoggedIn = function(){
+      if($localStorage.user!=undefined){
+        return true;
+      }
+      return false;
+    }
+    $scope.logout = function () {
+     
+     $localStorage.$reset();
+     showModal();
+    }
+
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -84,7 +99,11 @@ angular.module('starter.controllers', [])
 })
 .controller('menuCtrl',function($scope,$state){
   $scope.goToRegister = function () {
-    $state.go('app.register',{});
+    $state.go('app.register')
   }
+
+  
+  
+  
 })
 

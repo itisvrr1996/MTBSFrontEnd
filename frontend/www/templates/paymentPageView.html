@@ -1,0 +1,50 @@
+<ion-view view-title="Select Payment Option">
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="GoBack()">
+            <i class="icon ion-ios-arrow-back"></i>
+            Back</button>
+    </ion-nav-buttons>
+    <ion-content>
+
+        <div class="list card">
+
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" ng-model="email.email">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Phone Number</span>
+                    <input type="tel" placeholder="Phone Number" ng-model="phone">
+                </label>
+                <button class="button button-positive button-full" modal-select ng-model="paymentMethod" options="paymentMethods" on-select="selectMethod(oldValue,newValue)"
+                    modal-title="Select Payment Method" has-search="true">
+                    Select Payment Method
+                    <div class="option">
+                        {{option}}
+                    </div>
+                </button>
+                <div ng-if="email.email && phone && paymentMethod">
+                    <form action="" name="data.form">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">ID</span>
+                            <input type="number" placeholder="ID" required="" name="id" ng-model="data.id">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Password</span>
+                            <input type="password" placeholder="Password" required="" name="pass" ng-model="data.pass">
+                        </label>
+                        <button class="button button-assertive button-block" type="button" ng-disabled="!data.form.$valid" ng-click="submit()">
+                            Confirm Payment
+                        </button>
+                    </form>
+                </div>
+                {{data.form}}
+
+
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>

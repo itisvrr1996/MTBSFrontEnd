@@ -6,4 +6,5 @@ function LoginCtrl($scope) {
     function init() {
         console.log("Login Ctrl Registered");
     }
+
 }
