@@ -3,6 +3,15 @@ angular
     .controller('RegisterCtrl', RegisterCtrl)
 function RegisterCtrl($scope,$state,AuthService,$localStorage) {
   
+   $localStorage.$default({
+       user:{
+           id:1
+       }
+   })
+    
+    if($localStorage.user.id!=undefined){
+        $state.go('app.movies');
+    }
     init();
     $scope.f = {};
     $scope.loginData = {};
@@ -15,6 +24,7 @@ function RegisterCtrl($scope,$state,AuthService,$localStorage) {
         
          AuthService.register(form).then((data)=>{
             $state.go('app.movies');
+            $localStorage.set('user',data);
          });
       } else {
           console.log('invalid');

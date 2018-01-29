@@ -18,8 +18,9 @@
                     <input type="tel" placeholder="Phone Number" ng-model="phone">
                 </label>
                 <button class="button button-positive button-full" modal-select ng-model="paymentMethod" options="paymentMethods" on-select="selectMethod(oldValue,newValue)"
-                    modal-title="Select Payment Method" has-search="true">
-                    Select Payment Method
+                    modal-title="Select Payment Method " has-search="true">
+
+                    {{paymentMethod}}
                     <div class="option">
                         {{option}}
                     </div>
@@ -39,8 +40,7 @@
                         </button>
                     </form>
                 </div>
-                {{data.form}}
-
+                
 
             </div>
 

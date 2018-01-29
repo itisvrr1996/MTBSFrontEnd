@@ -47,6 +47,9 @@ angular.module('starter.controllers', [])
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
+    if($localStorage.get('user')!=undefined || $localStorage.get('user')!={}){
+      $state.go('app.movies');
+    }
     AuthService.login($scope.loginData.email,$scope.loginData.password).then(()=>{
       console.log('Successfull');
       $state.go('app.movies');

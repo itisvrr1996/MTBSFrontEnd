@@ -9,7 +9,7 @@ function PaymentPageCtrl($scope,$stateParams,$state) {
     $scope.isConfirmed = true;
     $scope.check = true;
     $scope.data = {}
-        $scope.paymentMethod = '';
+    $scope.paymentMethod = 'Select Payment Method';
     $scope.paymentMethods = [
         'NetBanking',
         'Credit Card',
