@@ -1,7 +1,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$localStorage,$state) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$localStorage,$state,AuthService) {
  
 
     $scope.isLoggedIn = function(){
@@ -47,12 +47,13 @@ angular.module('starter.controllers', [])
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
+    AuthService.login($scope.loginData.email,$scope.loginData.password).then(()=>{
+      console.log('Successfull');
+      $state.go('app.movies');
+      $scope.modal.hide();
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    }).catch(e=>console.log)
+   
   };
 })
 

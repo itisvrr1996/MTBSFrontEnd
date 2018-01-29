@@ -11,13 +11,11 @@ function RegisterCtrl($scope,$state,AuthService,$localStorage) {
         
       if($scope.f.myform.$valid){
           let form = $scope.loginData;
-          if(AuthService.register(form.email,form.firstName,form.lastName,form.password,form.reTypePassword)){
-                console.log('Registerd',AuthService.user);
-                $scope.loginData = {};
-                $state.go('app.movies');
-          } else {
-              console.log('not registerd');
-          }
+        console.log(form);
+        
+         AuthService.register(form).then((data)=>{
+            $state.go('app.movies');
+         });
       } else {
           console.log('invalid');
       }

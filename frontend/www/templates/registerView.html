@@ -14,11 +14,11 @@
                 </label>
                 <label class="item item-input">
                     <span class="input-label">First Name</span>
-                    <input type="text" ng-required="true" name="firstName" ng-model="loginData.firstName"> 
+                    <input type="text" ng-required="true" name="firstName" ng-model="loginData.firstName">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Last Name</span>
-                    <input type="text" ng-required="true" name="lastName" ng-model="loginData.lastName"> 
+                    <input type="text" ng-required="true" name="lastName" ng-model="loginData.lastName">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
@@ -28,6 +28,15 @@
                     <span class="input-label">Retype Password</span>
                     <input type="password" name="retypePassword" ng-model="loginData.reTypePassword">
                 </label>
+                <label class="item item-input">
+                    <span class="input-label">Date Of Birth</span>
+                    <input type="date" name="dob" ng-model="loginData.dob">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Contact No</span>
+                    <input type="number" name="contactNo" ng-model="loginData.contactNo">
+                </label>
+
                 <label class="item">
                     <button class="button button-block button-positive" type="button" ng-click="submit()">Register</button>
                 </label>
