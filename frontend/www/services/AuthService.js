@@ -9,7 +9,7 @@ function Service($state, $localStorage, $http) {
 
 
     this.user = {};
-    this.BASE = 'http://10.4.15.43:8080/BookMyTicket'
+    this.BASE = 'http://localhost:8080/BookMyTicket'
     this.login = function (email, password) {
         let promise = new Promise((res, rej) => {
             $http.post(this.BASE + '/login', {
